@@ -1,0 +1,125 @@
+[
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "custName",
+                    "operator": "notEqual",
+                    "value": ""
+                }
+            ]
+        },
+        "event": {
+            "type": "valid-customer-name",
+            "params": {
+                "message": "Customer name is valid"
+            }
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "country",
+                    "operator": "notEqual",
+                    "value": null
+                },
+                {
+                    "fact": "grade",
+                    "operator": "equal",
+                    "value": "A"
+                }
+            ]
+        },
+        "event": {
+            "type": "rule-1",
+            "params": {
+                "message": "Country is not null AND grade is 'A'"
+            }
+        }
+    },
+    {
+        "conditions": {
+            "any": [
+                {
+                    "fact": "country",
+                    "operator": "equal",
+                    "value": "USA"
+                },
+                {
+                    "fact": "department",
+                    "operator": "equal",
+                    "value": "Sales"
+                }
+            ]
+        },
+        "event": {
+            "type": "rule-2",
+            "params": {
+                "message": "Country is 'USA' OR department is 'Sales'"
+            }
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "city",
+                    "operator": "equal",
+                    "value": "New York"
+                },
+                {
+                    "any": [
+                        {
+                            "fact": "designation",
+                            "operator": "equal",
+                            "value": "Manager"
+                        },
+                        {
+                            "fact": "grade",
+                            "operator": "equal",
+                            "value": "B"
+                        }
+                    ]
+                }
+            ]
+        },
+        "event": {
+            "type": "rule-3",
+            "params": {
+                "message": "City is 'New York' AND (designation is 'Manager' OR grade is 'B')"
+            }
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "isActive",
+                    "operator": "equal",
+                    "value": true
+                },
+                {
+                    "any": [
+                        {
+                            "fact": "isBonusApplicable",
+                            "operator": "equal",
+                            "value": false
+                        },
+                        {
+                            "fact": "state",
+                            "operator": "equal",
+                            "value": null
+                        }
+                    ]
+                }
+            ]
+        },
+        "event": {
+            "type": "rule-4",
+            "params": {
+                "message": "isActive is true AND (isBonusApplicable is false OR state is null)"
+            }
+        }
+    }
+]

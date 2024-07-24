@@ -1,0 +1,26 @@
+[
+    {
+        "customerId": "C001",
+        "custName": "John Doe",
+        "department": "Sales",
+        "country": "USA",
+        "state": "California",
+        "city": "San Francisco",
+        "grade": "A",
+        "designation": "Manager",
+        "isActive": true,
+        "isBonusApplicable": true
+    },
+    {
+        "customerId": "C002",
+        "custName": "Jane Smith",
+        "department": "Marketing",
+        "country": "USA",
+        "state": "New York",
+        "city": "New York",
+        "grade": "B",
+        "designation": "Manager",
+        "isActive": true,
+        "isBonusApplicable": false
+    }
+]
