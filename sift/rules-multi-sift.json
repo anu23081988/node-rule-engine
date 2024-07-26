@@ -1,0 +1,390 @@
+[
+    {
+        "conditions": {
+            "$and": [
+                {
+                    "accountBalance": {
+                        "Greater Than": 500
+                    }
+                },
+                {
+                    "isActive": {
+                        "Equal": true
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "activeAccountHighBalance",
+            "params": {
+                "message": "Account balance is high and the account is active."
+            }
+        }
+    },
+    {
+        "conditions": {
+            "$or": [
+                {
+                    "subscriptionPlan": {
+                        "$eq": "Premium"
+                    }
+                },
+                {
+                    "accountType": {
+                        "$eq": "Premium"
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "premiumAccount",
+            "params": {
+                "message": "User has a premium subscription plan or account type."
+            }
+        }
+    },
+    {
+        "conditions": {
+            "$and": [
+                {
+                    "$or": [
+                        {
+                            "city": {
+                                "$eq": "West Marlon"
+                            }
+                        },
+                        {
+                            "city": {
+                                "$eq": "New Devin"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "accountBalance": {
+                        "$gt": 100
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "cityAndBalance",
+            "params": {
+                "message": "User is from a specified city and has a sufficient balance."
+            }
+        }
+    },
+    {
+        "conditions": {
+            "$and": [
+                {
+                    "$or": [
+                        {
+                            "jobTitle": {
+                                "$eq": "Principal Accountability Director"
+                            }
+                        },
+                        {
+                            "jobTitle": {
+                                "$eq": "Legacy Metrics Administrator"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "$and": [
+                        {
+                            "salary": {
+                                "$gt": 500
+                            }
+                        },
+                        {
+                            "isActive": {
+                                "$eq": true
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "event": {
+            "type": "highSalaryActiveJob",
+            "params": {
+                "message": "User has a high salary and is in an active job position."
+            }
+        }
+    },
+    {
+        "conditions": {
+            "$or": [
+                {
+                    "totalOrders": {
+                        "$gt": 10000
+                    }
+                },
+                {
+                    "rewardPoints": {
+                        "$gt": 50000
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "highOrderVolumeOrPoints",
+            "params": {
+                "message": "User has either a high number of orders or reward points."
+            }
+        }
+    },
+    {
+        "conditions": {
+            "$and": [
+                {
+                    "$or": [
+                        {
+                            "lastPurchaseDate": {
+                                "$gt": "2024-01-01"
+                            }
+                        },
+                        {
+                            "lastPurchaseDate": {
+                                "$eq": null
+                            }
+                        }
+                    ]
+                },
+                {
+                    "subscriptionEndDate": {
+                        "$gt": "2024-12-31"
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "recentPurchaseOrNoPurchaseAndValidSubscription",
+            "params": {
+                "message": "User made a recent purchase or has no purchase record and has a valid subscription."
+            }
+        }
+    },
+    {
+        "conditions": {
+            "$and": [
+                {
+                    "email": {
+                        "$regex": "hotmail.com"
+                    }
+                },
+                {
+                    "phone": {
+                        "$regex": "^(699)"
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "hotmailEmailAndSpecificPhone",
+            "params": {
+                "message": "User has a Hotmail email and a phone number starting with (699)."
+            }
+        }
+    },
+    {
+        "conditions": {
+            "$or": [
+                {
+                    "languages": {
+                        "$regex": "verto"
+                    }
+                },
+                {
+                    "languages": {
+                        "$nin": [
+                            "turba",
+                            "verto"
+                        ]
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "languageCondition",
+            "params": {
+                "message": "User's languages match the condition."
+            }
+        }
+    },
+    {
+        "conditions": {
+            "$and": [
+                {
+                    "bio": {
+                        "$where": "this.length > 20"
+                    }
+                },
+                {
+                    "jobTitle": {
+                        "$regex": "Director"
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "longBioAndDirector",
+            "params": {
+                "message": "User's bio length is greater than 20 and job title contains 'Director'."
+            }
+        }
+    },
+    {
+        "conditions": {
+            "$and": [
+                {
+                    "$or": [
+                        {
+                            "isActive": {
+                                "$eq": true
+                            }
+                        },
+                        {
+                            "subscriptionPlan": {
+                                "$eq": "Basic"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "$and": [
+                        {
+                            "totalOrders": {
+                                "$gt": 2000
+                            }
+                        },
+                        {
+                            "lastLogin": {
+                                "$gt": "2024-01-01"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "event": {
+            "type": "activeOrBasicWithHighOrdersAndRecentLogin",
+            "params": {
+                "message": "User is either active or has a Basic plan and has high orders with a recent login."
+            }
+        }
+    },
+    {
+        "conditions": {
+            "$or": [
+                {
+                    "$and": [
+                        {
+                            "address1.city": {
+                                "$eq": "South Enos"
+                            },
+                            "address1.country": {
+                                "$ne": "Sint Maarten"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "$and": [
+                        {
+                            "address1.state": {
+                                "$eq": "North Dakota"
+                            },
+                            "address1.city": {
+                                "$regex": ".*South.*"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "event": {
+            "type": "CityCountryMismatch",
+            "params": {
+                "message": "The city and country values do not match expected criteria."
+            }
+        }
+    },
+    {
+        "conditions": {
+            "$or": [
+                {
+                    "$and": [
+                        {
+                            "address1.city": {
+                                "$regex": "^South"
+                            },
+                            "address1.state": {
+                                "$exists": false
+                            }
+                        }
+                    ]
+                },
+                {
+                    "$and": [
+                        {
+                            "address1.country": {
+                                "$eq": "Sint Maarten"
+                            },
+                            "address1.city": {
+                                "$regex": "Enos$"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "event": {
+            "type": "InvalidStateOrCityMatch",
+            "params": {
+                "message": "The state does not exist or the city does not end with the expected value."
+            }
+        }
+    },
+    {
+        "conditions": {
+            "$or": [
+                {
+                    "$and": [
+                        {
+                            "address1.city": {
+                                "$in": [
+                                    "South Enos",
+                                    "South Beach"
+                                ]
+                            },
+                            "address1.country": {
+                                "$ne": "Sint Maarten"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "$and": [
+                        {
+                            "address1.state.length": {
+                                "$lt": 15
+                            },
+                            "address1.city": {
+                                "$regex": ".*South.*"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "event": {
+            "type": "CityCountryMismatchOrShortState",
+            "params": {
+                "message": "The city or country values mismatch or the state length is too short."
+            }
+        }
+    }
+]

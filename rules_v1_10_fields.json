@@ -1,0 +1,278 @@
+[
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "customerId",
+                    "operator": "Starts with",
+                    "value": "CUST"
+                }
+            ]
+        },
+        "event": {
+            "type": "valid-customer-id",
+            "params": {
+                "message": "Customer ID is valid"
+            }
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "custName",
+                    "operator": "notEqual",
+                    "value": ""
+                }
+            ]
+        },
+        "event": {
+            "type": "valid-customer-name",
+            "params": {
+                "message": "Customer name is valid"
+            }
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "department",
+                    "operator": "equal",
+                    "value": "IT"
+                }
+            ]
+        },
+        "event": {
+            "type": "it-department",
+            "params": {
+                "message": "Belongs to IT department"
+            }
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "country",
+                    "operator": "equal",
+                    "value": "UK"
+                }
+            ]
+        },
+        "event": {
+            "type": "uk-customer",
+            "params": {
+                "message": "Customer is based in UK"
+            }
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "state",
+                    "operator": "equal",
+                    "value": "California"
+                }
+            ]
+        },
+        "event": {
+            "type": "california-customer",
+            "params": {
+                "message": "Customer is located in California"
+            }
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "city",
+                    "operator": "equal",
+                    "value": "Los Angeles"
+                }
+            ]
+        },
+        "event": {
+            "type": "los-angeles-customer",
+            "params": {
+                "message": "Customer is located in Los Angeles"
+            }
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "grade",
+                    "operator": "equal",
+                    "value": "D"
+                }
+            ]
+        },
+        "event": {
+            "type": "grade-d",
+            "params": {
+                "message": "Customer is in grade D"
+            }
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "designation",
+                    "operator": "equal",
+                    "value": "Manager"
+                }
+            ]
+        },
+        "event": {
+            "type": "manager-position",
+            "params": {
+                "message": "Customer holds a managerial position"
+            }
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "isActive",
+                    "operator": "equal",
+                    "value": true
+                }
+            ]
+        },
+        "event": {
+            "type": "active-customer",
+            "params": {
+                "message": "Customer is active"
+            }
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "isBonusApplicable",
+                    "operator": "equal",
+                    "value": true
+                }
+            ]
+        },
+        "event": {
+            "type": "bonus-eligible",
+            "params": {
+                "message": "Customer is eligible for a bonus"
+            }
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "country",
+                    "operator": "notEqual",
+                    "value": null
+                },
+                {
+                    "fact": "grade",
+                    "operator": "equal",
+                    "value": "A"
+                }
+            ]
+        },
+        "event": {
+            "type": "rule-1",
+            "params": {
+                "message": "Country is not null AND grade is 'A'"
+            }
+        }
+    },
+    {
+        "conditions": {
+            "any": [
+                {
+                    "fact": "country",
+                    "operator": "equal",
+                    "value": "USA"
+                },
+                {
+                    "fact": "department",
+                    "operator": "equal",
+                    "value": "Sales"
+                }
+            ]
+        },
+        "event": {
+            "type": "rule-2",
+            "params": {
+                "message": "Country is 'USA' OR department is 'Sales'"
+            }
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "city",
+                    "operator": "equal",
+                    "value": "New York"
+                },
+                {
+                    "any": [
+                        {
+                            "fact": "designation",
+                            "operator": "equal",
+                            "value": "Manager"
+                        },
+                        {
+                            "fact": "grade",
+                            "operator": "equal",
+                            "value": "B"
+                        }
+                    ]
+                }
+            ]
+        },
+        "event": {
+            "type": "rule-3",
+            "params": {
+                "message": "City is 'New York' AND (designation is 'Manager' OR grade is 'B')"
+            }
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "isActive",
+                    "operator": "equal",
+                    "value": true
+                },
+                {
+                    "any": [
+                        {
+                            "fact": "isBonusApplicable",
+                            "operator": "equal",
+                            "value": false
+                        },
+                        {
+                            "fact": "state",
+                            "operator": "equal",
+                            "value": null
+                        }
+                    ]
+                }
+            ]
+        },
+        "event": {
+            "type": "rule-4",
+            "params": {
+                "message": "isActive is true AND (isBonusApplicable is false OR state is null)"
+            }
+        }
+    }
+]

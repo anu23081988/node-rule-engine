@@ -1,0 +1,574 @@
+[
+    {
+        "conditions": {
+            "$and": [
+                {
+                    "id": {
+                        "$exists": true
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "id-exists"
+        }
+    },
+    {
+        "conditions": {
+            "$and": [
+                {
+                    "name": {
+                        "$regex": "^Mr\\."
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "name-startsWith-Mr"
+        }
+    },
+    {
+        "conditions": {
+            "$and": [
+                {
+                    "email": {
+                        "$regex": "@gmail\\.com$"
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "email-endsWith-gmail"
+        }
+    },
+    {
+        "conditions": {
+            "$and": [
+                {
+                    "phone": {
+                        "$type": "string"
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "phone-isType-string"
+        }
+    },
+    {
+        "conditions": {
+            "$and": [
+                {
+                    "address": {
+                        "$ne": "1234 Elm St"
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "address-notEqual-1234ElmSt"
+        }
+    },
+    {
+        "conditions": {
+            "$and": [
+                {
+                    "city": {
+                        "$in": [
+                            "New York",
+                            "Los Angeles",
+                            "Chicago"
+                        ]
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "city-in-NYC-LA-Chicago"
+        }
+    },
+    {
+        "conditions": {
+            "$and": [
+                {
+                    "state": {
+                        "$nin": [
+                            "California",
+                            "Texas"
+                        ]
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "state-notIn-CA-TX"
+        }
+    },
+    {
+        "conditions": {
+            "$and": [
+                {
+                    "zipCode": {
+                        "$size": 5
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "zipCode-lengthEquals-5"
+        }
+    },
+    {
+        "conditions": {
+            "$and": [
+                {
+                    "country": {
+                        "$eq": "United States"
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "country-equal-US"
+        }
+    },
+    {
+        "conditions": {
+            "$and": [
+                {
+                    "companyName": {
+                        "$regex": "Tech"
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "companyName-contains-Tech"
+        }
+    },
+    {
+        "conditions": {
+            "$and": [
+                {
+                    "jobTitle": {
+                        "Length Greater Than": 5
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "jobTitle-greaterThan-5"
+        }
+    },
+    {
+        "conditions": {
+            "$and": [
+                {
+                    "dob": {
+                        "$lt": "2000-01-01"
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "dob-lessThan-2000-01-01"
+        }
+    },
+    {
+        "conditions": {
+            "$and": [
+                {
+                    "accountBalance": {
+                        "$gte": 1000
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "accountBalance-greaterThanInclusive-1000"
+        }
+    },
+    {
+        "conditions": {
+            "$and": [
+                {
+                    "accountNumber": {
+                        "$lte": 5000
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "accountNumber-lessThanInclusive-5000"
+        }
+    },
+    {
+        "conditions": {
+            "$and": [
+                {
+                    "accountNumber": {
+                        "$regex": "^[0-9]+$"
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "accountNumber-should be numeric"
+        }
+    },
+    {
+        "conditions": {
+            "$and": [
+                {
+                    "creditCardNumber": {
+                        "$eq": ""
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "creditCardNumber-empty"
+        }
+    },
+    {
+        "conditions": {
+            "$and": [
+                {
+                    "website": {
+                        "$ne": ""
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "website-notEmpty"
+        }
+    },
+    {
+        "conditions": {
+            "$and": [
+                {
+                    "username": {
+                        "$ne": null
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "username-notNull"
+        }
+    },
+    {
+        "conditions": {
+            "$and": [
+                {
+                    "password": {
+                        "$eq": null
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "password-isNull"
+        }
+    },
+    {
+        "conditions": {
+            "$and": [
+                {
+                    "avatar": {
+                        "$exists": true
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "avatar-exists"
+        }
+    },
+    {
+        "conditions": {
+            "$and": [
+                {
+                    "bio": {
+                        "$regex": "developer"
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "bio-contains-developer"
+        }
+    },
+    {
+        "conditions": {
+            "$and": [
+                {
+                    "hireDate": {
+                        "$gt": "2010-01-01"
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "hireDate-greaterThan-2010-01-01"
+        }
+    },
+    {
+        "conditions": {
+            "$and": [
+                {
+                    "department": {
+                        "$eq": "Engineering"
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "department-equal-Engineering"
+        }
+    },
+    {
+        "conditions": {
+            "$and": [
+                {
+                    "officeLocation": {
+                        "$regex": "Building A"
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "officeLocation-contains-BuildingA"
+        }
+    },
+    {
+        "conditions": {
+            "$and": [
+                {
+                    "salary": {
+                        "$gte": 60000
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "salary-greaterThanInclusive-60000"
+        }
+    },
+    {
+        "conditions": {
+            "$and": [
+                {
+                    "bonus": {
+                        "$lt": 5000
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "bonus-lessThan-5000"
+        }
+    },
+    {
+        "conditions": {
+            "$and": [
+                {
+                    "languages": {
+                        "$in": [
+                            "English",
+                            "Spanish"
+                        ]
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "languages-in-English-Spanish"
+        }
+    },
+    {
+        "conditions": {
+            "$and": [
+                {
+                    "preferredLanguage": {
+                        "$ne": "English"
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "preferredLanguage-notEqual-English"
+        }
+    },
+    {
+        "conditions": {
+            "$and": [
+                {
+                    "preferredCurrency": {
+                        "$eq": "USD"
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "preferredCurrency-equal-USD"
+        }
+    },
+    {
+        "conditions": {
+            "$and": [
+                {
+                    "maritalStatus": {
+                        "$ne": "Single"
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "maritalStatus-notEqual-Single"
+        }
+    },
+    {
+        "conditions": {
+            "$and": [
+                {
+                    "accountNumber": {
+                        "$regex": ".{6,}"
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "accountNumber-lengthGreaterThanInclusive-6"
+        }
+    },
+    {
+        "conditions": {
+            "$and": [
+                {
+                    "accountType": {
+                        "$eq": "Savings"
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "accountType-equal-Savings"
+        }
+    },
+    {
+        "conditions": {
+            "$and": [
+                {
+                    "accountBalance": {
+                        "$gt": 1000
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "accountBalance-greaterThan-1000"
+        }
+    },
+    {
+        "conditions": {
+            "$and": [
+                {
+                    "loyaltyPoints": {
+                        "$gte": 2000
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "loyaltyPoints-greaterThanInclusive-2000"
+        }
+    },
+    {
+        "conditions": {
+            "$and": [
+                {
+                    "favoriteBrand": {
+                        "$eq": "BrandA"
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "favoriteBrand-equal-BrandA"
+        }
+    },
+    {
+        "conditions": {
+            "$and": [
+                {
+                    "preferredShoppingTime": {
+                        "$nin": [
+                            "Morning"
+                        ]
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "preferredShoppingTime-notIn-Morning"
+        }
+    },
+    {
+        "conditions": {
+            "$and": [
+                {
+                    "purchaseFrequency": {
+                        "$lte": 10
+                    }
+                }
+            ]
+        },
+        "event": {
+            "type": "purchaseFrequency-lessThanInclusive-10"
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "address1.country",
+                    "operator": "equal",
+                    "value": "Bermuda"
+                }
+            ]
+        },
+        "event": {
+            "type": "country-equal-Bermuda"
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "address1.state",
+                    "operator": "equal",
+                    "value": "Pennsylvania"
+                }
+            ]
+        },
+        "event": {
+            "type": "state-equal-Pennsylvania"
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "address1.city",
+                    "operator": "equal",
+                    "value": "West Selmerboro"
+                }
+            ]
+        },
+        "event": {
+            "type": "city-equal-West-Selmerboro"
+        }
+    }
+]

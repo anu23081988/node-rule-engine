@@ -1,0 +1,426 @@
+[
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "accountBalance",
+                    "operator": "Greater Than",
+                    "value": 500
+                },
+                {
+                    "fact": "isActive",
+                    "operator": "Equal",
+                    "value": true
+                }
+            ]
+        },
+        "event": {
+            "type": "activeAccountHighBalance",
+            "params": {
+                "message": "Account balance is high and the account is active."
+            }
+        }
+    },
+    {
+        "conditions": {
+            "any": [
+                {
+                    "fact": "subscriptionPlan",
+                    "operator": "Equal",
+                    "value": "Premium"
+                },
+                {
+                    "fact": "accountType",
+                    "operator": "Equal",
+                    "value": "Premium"
+                }
+            ]
+        },
+        "event": {
+            "type": "premiumAccount",
+            "params": {
+                "message": "User has a premium subscription plan or account type."
+            }
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "any": [
+                        {
+                            "fact": "city",
+                            "operator": "Equal",
+                            "value": "West Marlon"
+                        },
+                        {
+                            "fact": "city",
+                            "operator": "Equal",
+                            "value": "New Devin"
+                        }
+                    ]
+                },
+                {
+                    "fact": "accountBalance",
+                    "operator": "Greater Than",
+                    "value": 100
+                }
+            ]
+        },
+        "event": {
+            "type": "cityAndBalance",
+            "params": {
+                "message": "User is from a specified city and has a sufficient balance."
+            }
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "any": [
+                        {
+                            "fact": "jobTitle",
+                            "operator": "Equal",
+                            "value": "Principal Accountability Director"
+                        },
+                        {
+                            "fact": "jobTitle",
+                            "operator": "Equal",
+                            "value": "Legacy Metrics Administrator"
+                        }
+                    ]
+                },
+                {
+                    "all": [
+                        {
+                            "fact": "salary",
+                            "operator": "Greater Than",
+                            "value": 500
+                        },
+                        {
+                            "fact": "isActive",
+                            "operator": "Equal",
+                            "value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        "event": {
+            "type": "highSalaryActiveJob",
+            "params": {
+                "message": "User has a high salary and is in an active job position."
+            }
+        }
+    },
+    {
+        "conditions": {
+            "any": [
+                {
+                    "fact": "totalOrders",
+                    "operator": "Greater Than",
+                    "value": 10000
+                },
+                {
+                    "fact": "rewardPoints",
+                    "operator": "Greater Than",
+                    "value": 50000
+                }
+            ]
+        },
+        "event": {
+            "type": "highOrderVolumeOrPoints",
+            "params": {
+                "message": "User has either a high number of orders or reward points."
+            }
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "any": [
+                        {
+                            "fact": "lastPurchaseDate",
+                            "operator": "Greater Than",
+                            "value": "2024-01-01"
+                        },
+                        {
+                            "fact": "lastPurchaseDate",
+                            "operator": "Is Null",
+                            "value": true
+                        }
+                    ]
+                },
+                {
+                    "fact": "subscriptionEndDate",
+                    "operator": "Greater Than",
+                    "value": "2024-12-31"
+                }
+            ]
+        },
+        "event": {
+            "type": "recentPurchaseOrNoPurchaseAndValidSubscription",
+            "params": {
+                "message": "User made a recent purchase or has no purchase record and has a valid subscription."
+            }
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "email",
+                    "operator": "Contains",
+                    "value": "hotmail.com"
+                },
+                {
+                    "fact": "phone",
+                    "operator": "Starts with",
+                    "value": "(699)"
+                }
+            ]
+        },
+        "event": {
+            "type": "hotmailEmailAndSpecificPhone",
+            "params": {
+                "message": "User has a Hotmail email and a phone number starting with (699)."
+            }
+        }
+    },
+    {
+        "conditions": {
+            "any": [
+                {
+                    "fact": "languages",
+                    "operator": "Contains",
+                    "value": "verto"
+                },
+                {
+                    "fact": "languages",
+                    "operator": "Not In",
+                    "value": [
+                        "turba",
+                        "verto"
+                    ]
+                }
+            ]
+        },
+        "event": {
+            "type": "languageCondition",
+            "params": {
+                "message": "User's languages match the condition."
+            }
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "bio",
+                    "operator": "Length Greater Than",
+                    "value": 20
+                },
+                {
+                    "fact": "jobTitle",
+                    "operator": "Contains",
+                    "value": "Director"
+                }
+            ]
+        },
+        "event": {
+            "type": "longBioAndDirector",
+            "params": {
+                "message": "User's bio length is greater than 20 and job title contains 'Director'."
+            }
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "any": [
+                        {
+                            "fact": "isActive",
+                            "operator": "Equal",
+                            "value": true
+                        },
+                        {
+                            "fact": "subscriptionPlan",
+                            "operator": "Equal",
+                            "value": "Basic"
+                        }
+                    ]
+                },
+                {
+                    "all": [
+                        {
+                            "fact": "totalOrders",
+                            "operator": "Greater Than",
+                            "value": 2000
+                        },
+                        {
+                            "fact": "lastLogin",
+                            "operator": "Greater Than",
+                            "value": "2024-01-01"
+                        }
+                    ]
+                }
+            ]
+        },
+        "event": {
+            "type": "activeOrBasicWithHighOrdersAndRecentLogin",
+            "params": {
+                "message": "User is either active or has a Basic plan and has high orders with a recent login."
+            }
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "any": [
+                        {
+                            "all": [
+                                {
+                                    "fact": "address1",
+                                    "operator": "Equal",
+                                    "value": "South Enos",
+                                    "path": "$.city"
+                                },
+                                {
+                                    "fact": "address1",
+                                    "operator": "Not Equal",
+                                    "value": "Sint Maarten",
+                                    "path": "$.country"
+                                }
+                            ]
+                        },
+                        {
+                            "all": [
+                                {
+                                    "fact": "address1",
+                                    "operator": "Contains",
+                                    "value": "North",
+                                    "path": "$.state"
+                                },
+                                {
+                                    "fact": "address1",
+                                    "operator": "Contains",
+                                    "value": "South",
+                                    "path": "$.city"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "event": {
+            "type": "CityCountryMismatch",
+            "params": {
+                "message": "The city and country values do not match expected criteria."
+            }
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "any": [
+                        {
+                            "all": [
+                                {
+                                    "fact": "address1",
+                                    "operator": "Starts with",
+                                    "value": "South",
+                                    "path": "$.city"
+                                },
+                                {
+                                    "fact": "address1",
+                                    "operator": "Does not Exists",
+                                    "value": true,
+                                    "path": "$.state"
+                                }
+                            ]
+                        },
+                        {
+                            "all": [
+                                {
+                                    "fact": "address1",
+                                    "operator": "Equal",
+                                    "value": "Sint Maarten",
+                                    "path": "$.country"
+                                },
+                                {
+                                    "fact": "address1",
+                                    "operator": "Ends with",
+                                    "value": "Enos",
+                                    "path": "$.city"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "event": {
+            "type": "InvalidStateOrCityMatch",
+            "params": {
+                "message": "The state does not exist or the city does not end with the expected value."
+            }
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "any": [
+                        {
+                            "all": [
+                                {
+                                    "fact": "address1",
+                                    "operator": "In",
+                                    "value": [
+                                        "South Enos",
+                                        "South Beach"
+                                    ],
+                                    "path": "$.city"
+                                },
+                                {
+                                    "fact": "address1",
+                                    "operator": "Not Equal",
+                                    "value": "Sint Maarten",
+                                    "path": "$.country"
+                                }
+                            ]
+                        },
+                        {
+                            "all": [
+                                {
+                                    "fact": "address1",
+                                    "operator": "Length Less Than",
+                                    "value": 15,
+                                    "path": "$.state"
+                                },
+                                {
+                                    "fact": "address1",
+                                    "operator": "Contains",
+                                    "value": "South",
+                                    "path": "$.city"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "event": {
+            "type": "CityCountryMismatchOrShortState",
+            "params": {
+                "message": "The city or country values mismatch or the state length is too short."
+            }
+        }
+    }
+]

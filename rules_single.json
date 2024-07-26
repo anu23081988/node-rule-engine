@@ -1,0 +1,578 @@
+[
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "id",
+                    "operator": "Exists",
+                    "value": true
+                }
+            ]
+        },
+        "event": {
+            "type": "id-exists"
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "name",
+                    "operator": "Starts with",
+                    "value": "Mr."
+                }
+            ]
+        },
+        "event": {
+            "type": "name-startsWith-Mr"
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "email",
+                    "operator": "Ends with",
+                    "value": "@gmail.com"
+                }
+            ]
+        },
+        "event": {
+            "type": "email-endsWith-gmail"
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "phone",
+                    "operator": "Is Type",
+                    "value": "string"
+                }
+            ]
+        },
+        "event": {
+            "type": "phone-isType-string"
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "address",
+                    "operator": "Not Equal",
+                    "value": "1234 Elm St"
+                }
+            ]
+        },
+        "event": {
+            "type": "address-notEqual-1234ElmSt"
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "city",
+                    "operator": "in",
+                    "value": [
+                        "New York",
+                        "Los Angeles",
+                        "Chicago"
+                    ]
+                }
+            ]
+        },
+        "event": {
+            "type": "city-in-NYC-LA-Chicago"
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "state",
+                    "operator": "Does not Contains",
+                    "value": [
+                        "California",
+                        "Texas"
+                    ]
+                }
+            ]
+        },
+        "event": {
+            "type": "state-notIn-CA-TX"
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "zipCode",
+                    "operator": "Length Equals",
+                    "value": 5
+                }
+            ]
+        },
+        "event": {
+            "type": "zipCode-lengthEquals-5"
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "country",
+                    "operator": "Equal",
+                    "value": "United States"
+                }
+            ]
+        },
+        "event": {
+            "type": "country-equal-US"
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "companyName",
+                    "operator": "Contains",
+                    "value": "Tech"
+                }
+            ]
+        },
+        "event": {
+            "type": "companyName-contains-Tech"
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "jobTitle",
+                    "operator": "Length Greater Than",
+                    "value": 5
+                }
+            ]
+        },
+        "event": {
+            "type": "jobTitle-'Length Greater Than'-5"
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "dob",
+                    "operator": "Less Than",
+                    "value": "2000-01-01"
+                }
+            ]
+        },
+        "event": {
+            "type": "dob-lessThan-2000-01-01"
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "accountNumber",
+                    "operator": "Less Than and Equals To",
+                    "value": 5000
+                }
+            ]
+        },
+        "event": {
+            "type": "accountNumber-lessThanInclusive-5000"
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "accountNumber",
+                    "operator": "Pattern",
+                    "value": "^[0-9]+$"
+                }
+            ]
+        },
+        "event": {
+            "type": "accountNumber-should be numeric"
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "creditCardNumber",
+                    "operator": "Empty",
+                    "value": true
+                }
+            ]
+        },
+        "event": {
+            "type": "creditCardNumber-empty"
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "website",
+                    "operator": "Not Empty",
+                    "value": true
+                }
+            ]
+        },
+        "event": {
+            "type": "website-notEmpty"
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "username",
+                    "operator": "Not Null",
+                    "value": true
+                }
+            ]
+        },
+        "event": {
+            "type": "username-notNull"
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "password",
+                    "operator": "Is Null",
+                    "value": true
+                }
+            ]
+        },
+        "event": {
+            "type": "password-isNull"
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "avatar",
+                    "operator": "Exists",
+                    "value": true
+                }
+            ]
+        },
+        "event": {
+            "type": "avatar-exists"
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "bio",
+                    "operator": "Contains",
+                    "value": "developer"
+                }
+            ]
+        },
+        "event": {
+            "type": "bio-contains-developer"
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "hireDate",
+                    "operator": "Greater Than",
+                    "value": "2010-01-01"
+                }
+            ]
+        },
+        "event": {
+            "type": "hireDate-'Greater Than'-2010-01-01"
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "department",
+                    "operator": "Equal",
+                    "value": "Engineering"
+                }
+            ]
+        },
+        "event": {
+            "type": "department-equal-Engineering"
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "officeLocation",
+                    "operator": "Contains",
+                    "value": "Building A"
+                }
+            ]
+        },
+        "event": {
+            "type": "officeLocation-contains-BuildingA"
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "salary",
+                    "operator": "Greater Than and Equals To",
+                    "value": 60000
+                }
+            ]
+        },
+        "event": {
+            "type": "salary-'Greater Than'-Inclusive-60000"
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "bonus",
+                    "operator": "Less Than",
+                    "value": 5000
+                }
+            ]
+        },
+        "event": {
+            "type": "bonus-lessThan-5000"
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "languages",
+                    "operator": "in",
+                    "value": [
+                        "English",
+                        "Spanish"
+                    ]
+                }
+            ]
+        },
+        "event": {
+            "type": "languages-in-English-Spanish"
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "preferredLanguage",
+                    "operator": "Not Equal",
+                    "value": "English"
+                }
+            ]
+        },
+        "event": {
+            "type": "preferredLanguage-notEqual-English"
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "preferredCurrency",
+                    "operator": "Equal",
+                    "value": "USD"
+                }
+            ]
+        },
+        "event": {
+            "type": "preferredCurrency-equal-USD"
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "maritalStatus",
+                    "operator": "Not Equal",
+                    "value": "Single"
+                }
+            ]
+        },
+        "event": {
+            "type": "maritalStatus-notEqual-Single"
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "accountNumber",
+                    "operator": "Length Greater Than and Equals To",
+                    "value": 6
+                }
+            ]
+        },
+        "event": {
+            "type": "accountNumber-lengthGreaterThan Inclusive-6"
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "accountType",
+                    "operator": "Equal",
+                    "value": "Savings"
+                }
+            ]
+        },
+        "event": {
+            "type": "accountType-equal-Savings"
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "accountBalance",
+                    "operator": "Greater Than",
+                    "value": 1000
+                }
+            ]
+        },
+        "event": {
+            "type": "accountBalance-'Greater Than'-1000"
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "loyaltyPoints",
+                    "operator": "Greater Than and Equals To",
+                    "value": 2000
+                }
+            ]
+        },
+        "event": {
+            "type": "loyaltyPoints-'Greater Than' Inclusive-2000"
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "favoriteBrand",
+                    "operator": "Equal",
+                    "value": "BrandA"
+                }
+            ]
+        },
+        "event": {
+            "type": "favoriteBrand-equal-BrandA"
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "preferredShoppingTime",
+                    "operator": "Does not Contains",
+                    "value": [
+                        "Morning"
+                    ]
+                }
+            ]
+        },
+        "event": {
+            "type": "preferredShoppingTime-notIn-Morning"
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "purchaseFrequency",
+                    "operator": "Less Than and Equals To",
+                    "value": 10
+                }
+            ]
+        },
+        "event": {
+            "type": "purchaseFrequency-lessThanInclusive-10"
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "address1",
+                    "operator": "equal",
+                    "value": "Bermuda",
+                    "path": "$.country"
+                }
+            ]
+        },
+        "event": {
+            "type": "country-equal-Bermuda"
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "address1",
+                    "operator": "equal",
+                    "value": "Pennsylvania",
+                    "path": "$.state"
+                }
+            ]
+        },
+        "event": {
+            "type": "state-equal-Pennsylvania"
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "address1",
+                    "operator": "equal",
+                    "value": "West Selmerboro",
+                    "path": "$.city"
+                }
+            ]
+        },
+        "event": {
+            "type": "city-equal-West-Selmerboro"
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "nationality",
+                    "operator": "Not In",
+                    "value": ["Belize", "Afghanistan"]
+                }
+            ]
+        },
+        "event": {
+            "type": "nationality-not in-Belize-Afghanistan"
+        }
+    }
+
+]
